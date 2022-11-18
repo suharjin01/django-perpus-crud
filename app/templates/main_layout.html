@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF­8"> 
+    <title>{% block title %} {% endblock %}</title> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='font-awesome/font-awesome.woff')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='js/dataTables/dataTables.bootstrap.css')}}">
+</head>
+<body>
+	
+        
+        <!--sidebar-->
+        {% include 'includes/sidebar.html' %}
+ 
+        <div class="content"> 
+            {% block content %} {% endblock %}
+        </div> 
+ 
+    </div> 
+    <script src="{{ url_for('static', filename='js/dataTables/jquery.dataTables.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/dataTables/dataTables.bootstrap.js')}}"></script>
+    <script>
+        $(document).ready(function () {
+            $('#dataTables-example').dataTable();
+        });
+     </script>
+</body> 
+</html>
